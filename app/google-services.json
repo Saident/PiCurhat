@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "459683920020",
+    "firebase_url": "https://mindly-ta-pam-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mindly-ta-pam",
+    "storage_bucket": "mindly-ta-pam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459683920020:android:91296ef2362a377aff1c81",
+        "android_client_info": {
+          "package_name": "com.tugasakhir.mindly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459683920020-v6g9j6ufgtl5uomv6ge59mdvfa9sugda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-9k3mRMTfgdPy-4wEHuk3-kCvVphkVZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459683920020-v6g9j6ufgtl5uomv6ge59mdvfa9sugda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

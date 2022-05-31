@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.mindly"
+        applicationId "com.tugasakhir.mindly"
         minSdk 27
         targetSdk 32
         versionCode 1

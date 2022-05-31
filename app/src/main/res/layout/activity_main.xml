@@ -50,8 +50,6 @@
 
 </LinearLayout>
 
-
-
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="301dp"
@@ -99,6 +97,7 @@
             android:inputType="textPassword"
             android:textColor="#767676"
             android:textColorHint="#767676"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="45dp"
