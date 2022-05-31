@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_posting"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
-        android:background="none"
         android:layout_marginStart="6dp"
         app:layout_constraintBottom_toTopOf="@id/iv_avatar"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -32,7 +31,6 @@
         android:layout_height="466dp"
         android:hint="What's on your mind??"
         android:gravity="top"
-        android:background="none"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toEndOf="@id/iv_avatar"
@@ -42,7 +40,6 @@
         android:id="@+id/ib_addpic"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="none"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_picture"
         app:layout_constraintBottom_toBottomOf="parent"
