@@ -116,17 +116,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                @Override
                                public void onComplete(@NonNull Task<Void> task) {
                                    if (task.isSuccessful()){
-                                       Toast.makeText(RegisterActivity.this, "User has been created!", Toast.LENGTH_LONG).show();
+                                       Toast.makeText(RegisterActivity.this, "User has been created!", Toast.LENGTH_SHORT).show();
                                        progressBar.setVisibility(View.VISIBLE);
                                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                    }else{
-                                       Toast.makeText(RegisterActivity.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                                       Toast.makeText(RegisterActivity.this, "Failed to register!", Toast.LENGTH_SHORT).show();
                                        progressBar.setVisibility(View.GONE);
                                    }
                                }
                            });
                        }else{
-                           Toast.makeText(RegisterActivity.this, "Failed to register!", Toast.LENGTH_LONG).show();
+                           Toast.makeText(RegisterActivity.this, "Failed to register!", Toast.LENGTH_SHORT).show();
                            progressBar.setVisibility(View.GONE);
                        }
                    }
