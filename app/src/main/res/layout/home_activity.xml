@@ -64,7 +64,7 @@
 </androidx.recyclerview.widget.RecyclerView>
 
     <ImageView
-        android:id="@+id/tambah"
+        android:id="@+id/bt_add"
         android:layout_width="49dp"
         android:layout_height="73dp"
         android:layout_marginBottom="40dp"
@@ -92,7 +92,8 @@
             android:background="@color/white"
             app:itemIconTint="#574164"
             app:itemTextColor="#574164"
-            app:menu="@menu/botnav_menu" />
+            app:menu="@menu/botnav_menu">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
