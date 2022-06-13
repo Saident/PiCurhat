@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.textclassifier.TextClassification;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,15 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     RecyclerView rv_post;
     DatabaseReference database;
     PostAdapter postAdapter;
-    ArrayList<PostModel> listPost;
+    ArrayList<Post> listPost;
+
+    ImageView btAdd;
 
     FirebaseUser user;
     private String userID;
@@ -36,9 +39,45 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
-        recView();
+        initialize();
+        getRecView();
+        getUserName();
 
-        //userlogin
+    }
+
+    private void initialize(){
+        btAdd = findViewById(R.id.bt_add);
+        btAdd.setOnClickListener(this);
+    }
+
+    private void getRecView(){
+        rv_post = findViewById(R.id.recview_post);
+        database = FirebaseDatabase.getInstance().getReference("PostData");
+        rv_post.setHasFixedSize(true);
+        rv_post.setLayoutManager(new LinearLayoutManager(this));
+
+        listPost = new ArrayList<>();
+        postAdapter = new PostAdapter(this,listPost);
+        rv_post.setAdapter(postAdapter);
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    Post post = dataSnapshot.getValue((Post.class));
+                    listPost.add(post);
+                }
+                postAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getUserName(){
         user = FirebaseAuth.getInstance().getCurrentUser();
         database = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -61,31 +100,12 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void recView(){
-        //recview
-        rv_post = findViewById(R.id.recview_post);
-        database = FirebaseDatabase.getInstance().getReference("PostData");
-        rv_post.setHasFixedSize(true);
-        rv_post.setLayoutManager(new LinearLayoutManager(this));
-
-        listPost = new ArrayList<>();
-        postAdapter = new PostAdapter(this,listPost);
-        rv_post.setAdapter(postAdapter);
-
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    PostModel post = dataSnapshot.getValue((PostModel.class));
-                    listPost.add(post);
-                }
-                postAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.bt_add:
+                startActivity(new Intent(this, PostActivity.class));
+                break;
+        }
     }
 }

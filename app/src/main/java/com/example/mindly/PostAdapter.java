@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,9 +15,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     Context context;
 
-    ArrayList<PostModel> postList;
+    ArrayList<Post> postList;
 
-    public PostAdapter(Context context, ArrayList<PostModel> postList) {
+    public PostAdapter(Context context, ArrayList<Post> postList) {
         this.context = context;
         this.postList = postList;
     }
@@ -28,17 +27,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.post_item,parent,false);
         return new PostViewHolder(v);
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.PostViewHolder holder, int position) {
-
-
-        PostModel postModel = postList.get(position);
-        holder.text_post.setText(postModel.getText_post());
-        holder.username.setText(postModel.getUsername());
-        holder.at_username.setText(postModel.getUsername());
+        Post post = postList.get(position);
+        holder.text_post.setText(post.getTextPost());
+        holder.username.setText(post.getUsername());
+        holder.atUsername.setText(post.getUserID());
     }
 
     @Override
@@ -48,16 +44,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     public static class PostViewHolder extends RecyclerView.ViewHolder{
 
-        TextView text_post, username, at_username;
-        ImageView image_post;
+        TextView text_post, username, atUsername;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
 
             text_post = itemView.findViewById(R.id.tv_text_post);
             username = itemView.findViewById(R.id.tv_username);
-            at_username = itemView.findViewById(R.id.tv_username);
-            image_post = itemView.findViewById(R.id.iv_image_post);
+            atUsername = itemView.findViewById(R.id.tv_userID);
         }
     }
 
