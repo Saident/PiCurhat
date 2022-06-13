@@ -53,24 +53,6 @@ public class PostActivity extends AppCompatActivity {
                 postText = etPost.getText().toString().trim();
                 username = fullname;
 
-//                if (!postText.isEmpty()){
-//
-//                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                    DatabaseReference myRef = database.getReference("PostData");
-//
-//                    Post post = new Post(postText, username, username);
-//                    myRef.child(username).setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            if (task.isSuccessful()){
-//                                Toast.makeText(PostActivity.this, "Post Successful", Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(PostActivity.this, HomeActivity.class));
-//                            }else{
-//                                Toast.makeText(PostActivity.this, "Post Failed", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    });
-//                }
 
                 Post posted = new Post(postText, username, username);
                 FirebaseDatabase.getInstance().getReference("PostData")
@@ -95,7 +77,6 @@ public class PostActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView tv_name = (TextView) findViewById(R.id.tv_name);
         database.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
