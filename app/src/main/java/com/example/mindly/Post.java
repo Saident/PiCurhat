@@ -1,7 +1,5 @@
 package com.example.mindly;
 
-import android.provider.MediaStore;
-
 public class Post {
     String textPost, username, userID;
     String images;
