@@ -23,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Date;
+
 public class PostActivity extends AppCompatActivity {
 
     Button cancel, post;
@@ -58,7 +60,7 @@ public class PostActivity extends AppCompatActivity {
 
                 Post posted = new Post(postText, username, username);
                 FirebaseDatabase.getInstance().getReference("PostData")
-                        .child("Post" + homeActivity.getItemCount())
+                        .child("Post" + new Date().getTime())
                         .setValue(posted).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
