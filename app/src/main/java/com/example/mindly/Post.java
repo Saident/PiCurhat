@@ -1,16 +1,24 @@
 package com.example.mindly;
 
+import android.provider.MediaStore;
+
 public class Post {
     String textPost, username, userID;
+    String images;
 
-    public Post(String textPost, String username, String userID) {
+    public Post(String textPost, String username, String userID, String images) {
         this.textPost = textPost;
         this.username = username;
         this.userID = userID;
+        this.images = images;
     }
 
     public Post(){
 
+    }
+
+    public String getImages() {
+        return images;
     }
 
     public String getTextPost() {
@@ -35,5 +43,9 @@ public class Post {
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }

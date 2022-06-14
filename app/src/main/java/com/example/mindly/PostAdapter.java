@@ -1,13 +1,17 @@
 package com.example.mindly;
 
 import android.content.Context;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -35,6 +39,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.text_post.setText(post.getTextPost());
         holder.username.setText(post.getUsername());
         holder.atUsername.setText(post.getUserID());
+        Glide.with(context).load(postList.get(position).getImages()).into(holder.images);
     }
 
     @Override
@@ -45,6 +50,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public static class PostViewHolder extends RecyclerView.ViewHolder{
 
         TextView text_post, username, atUsername;
+        ImageView images;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +58,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             text_post = itemView.findViewById(R.id.tv_text_post);
             username = itemView.findViewById(R.id.tv_username);
             atUsername = itemView.findViewById(R.id.tv_userID);
+            images = itemView.findViewById(R.id.iv_image_post);
         }
     }
 

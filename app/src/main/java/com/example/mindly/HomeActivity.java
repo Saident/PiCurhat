@@ -111,10 +111,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public int getItemCount() {
-            return listPost.size();
-    }
-
     public void onBackPressed() {
         return;
     }
