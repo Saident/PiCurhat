@@ -106,6 +106,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_add:
                 startActivity(new Intent(this, PostActivity.class));
                 break;
+            case R.id.tv_option:
+                break;
         }
+    }
+
+    public int getItemCount() {
+            return listPost.size();
+    }
+
+    public void onBackPressed() {
+        return;
     }
 }

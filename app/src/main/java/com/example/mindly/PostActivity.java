@@ -34,6 +34,7 @@ public class PostActivity extends AppCompatActivity {
 
     FirebaseUser user;
     private String userID, fullname;
+    private int childCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,11 @@ public class PostActivity extends AppCompatActivity {
                 postText = etPost.getText().toString().trim();
                 username = fullname;
 
+                HomeActivity homeActivity = new HomeActivity();
 
                 Post posted = new Post(postText, username, username);
                 FirebaseDatabase.getInstance().getReference("PostData")
-                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child("Post" + homeActivity.getItemCount())
                         .setValue(posted).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -93,4 +95,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
