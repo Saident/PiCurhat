@@ -51,8 +51,6 @@ public class PostActivity extends AppCompatActivity {
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference database = db.getReference().child("PostData");
-    FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
-    StorageReference storageReference = firebaseStorage.getReference();
     FirebaseUser user;
 
     private String userID, fullname, media=null;
