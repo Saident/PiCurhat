@@ -42,11 +42,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right">
-                <TextView
-                    android:id="@+id/tv_option"
+                <Button
+                    android:id="@+id/bt_delete"
                     android:layout_width="60dp"
                     android:layout_height="40dp"
-                    android:text=". . ."
+                    android:text="Del"
+                    android:background="#FFB562"
                     android:visibility="visible"
                     android:clickable="true"
                     android:textSize="20sp"

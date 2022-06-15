@@ -4,14 +4,18 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
@@ -50,6 +54,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         TextView text_post, username, atUsername;
         ImageView images;
+        Button del;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,7 +63,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             username = itemView.findViewById(R.id.tv_username);
             atUsername = itemView.findViewById(R.id.tv_userID);
             images = itemView.findViewById(R.id.iv_image_post);
+            del = itemView.findViewById(R.id.bt_delete);
+            del.setOnClickListener(view -> {
+                FirebaseDatabase.getInstance().getReference().child("PostData").child("Post" + text_post.getText().toString()).removeValue();
+            });
+
         }
+
     }
 
 }

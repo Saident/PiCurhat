@@ -37,6 +37,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -93,7 +94,7 @@ public class PostActivity extends AppCompatActivity {
 
                     Post posted = new Post(postText, username, "@" + username, media);
                     FirebaseDatabase.getInstance().getReference("PostData")
-                            .child("Post" + new Date().getTime())
+                            .child("Post" + posted.textPost)
                             .setValue(posted).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -161,6 +162,8 @@ public class PostActivity extends AppCompatActivity {
             });
             thread.start();
         }
+
+
     }
 
     private void upload() {
@@ -218,7 +221,7 @@ public class PostActivity extends AppCompatActivity {
 
         Post posted = new Post(postText, username, "@" + username, media);
         FirebaseDatabase.getInstance().getReference("PostData")
-                .child("Post" + new Date().getTime())
+                .child("Post" + posted.textPost)
                 .setValue(posted).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

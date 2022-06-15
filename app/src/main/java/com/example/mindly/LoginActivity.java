@@ -30,10 +30,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
+    FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        if (user != null){
+//            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+//        }
 
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
