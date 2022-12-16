@@ -28,46 +28,59 @@
                         android:id="@+id/tv_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Username"
+                        android:text="Jangan Self Diagnosis Mental Health"
+                        android:fontFamily="@font/poppins_semibold"
                         android:textColor="@color/black"
+                        android:textSize="12sp"
                         android:layout_marginStart="10dp"/>
                     <TextView
                         android:id="@+id/tv_userID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:hint="username"/>
+                        android:text="\@username"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="#822C2C"/>
                 </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right">
-                <Button
+                android:gravity="right"
+                >
+
+                <ImageButton
+                    android:src="@drawable/ic_threedots"
+                    android:scaleType="fitCenter"
                     android:id="@+id/bt_delete"
-                    android:layout_width="60dp"
-                    android:layout_height="40dp"
-                    android:text="Del"
-                    android:background="#FFB562"
-                    android:visibility="visible"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:background="#00FFFFFF"
                     android:clickable="true"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"/>
+                    android:visibility="visible" />
             </LinearLayout>
 
         </LinearLayout>
             <ImageView
                 android:id="@+id/iv_image_post"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="270dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="70dp"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                android:background="@drawable/bg_img"
+                />
             <TextView
                 android:id="@+id/tv_text_post"
-                android:layout_width="match_parent"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="70dp"
                 android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:fontFamily="@font/poppins"
                 android:text="Dalam sebuah blog yang pernah saya baca, ada seseorang menceritakan pengalaman ..."/>
     </LinearLayout>
 
