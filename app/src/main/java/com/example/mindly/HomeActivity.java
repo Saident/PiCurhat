@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 listPost.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Post post = dataSnapshot.getValue((Post.class));
-                    listPost.add(post);
+                        listPost.add(post);
                 }
                 postAdapter.notifyDataSetChanged();
             }
@@ -84,10 +84,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         database = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView tv_name = (TextView) findViewById(R.id.tv_name);
+
         database.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                final TextView tv_name = (TextView) findViewById(R.id.tv_name);
                 User user = snapshot.getValue(User.class);
                 if (user != null){
                     String fullname = user.fullname;

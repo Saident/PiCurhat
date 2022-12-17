@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Mind.Ly</string>
     <string name="username"></string>
-    <string name="have_account"><font color="@color/white">already have an account? </font><font color="#F8BA5F"><u>Login.</u></font></string>
+    <string name="haveaccount"><font color="@color/white">already have an account? </font><font color="#F8BA5F"><u>Login.</u></font></string>
     <string name="term"><font color="@color/white">By signing up, you are agree with our </font><font color="#F8BA5F"><u>Term &amp; Condition</u></font></string>
-    <string name="dont_have_account"><font color="@color/white">Don't have an account? </font><font color="#F8BA5F"><u>Register now</u></font></string>
+    <string name="donthaveaccount"><font color="@color/white">Don\'t have an account? </font><font color="#F8BA5F"><u>Register now</u></font></string>
 
 
 </resources>

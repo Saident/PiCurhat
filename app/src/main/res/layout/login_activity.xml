@@ -25,7 +25,7 @@
         android:layout_height="60dp"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="10dp"
-        android:text="Share your mind from your deepest heart with Mind.ly to be a better person every day."
+        android:text="Share your feel without no one disturb you with PiCurhat"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/content" />
 
     <TextView
-        android:id="@+id/register"
+        android:id="@+id/tnc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -116,15 +116,15 @@
         android:fontFamily="@font/poppins"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tnc" />
+        app:layout_constraintTop_toBottomOf="@id/register" />
 
     <TextView
-        android:id="@+id/tnc"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="@string/dont_have_account"
+        android:text="@string/donthaveaccount"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:textStyle="normal"

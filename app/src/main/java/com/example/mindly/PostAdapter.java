@@ -42,7 +42,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.text_post.setText(post.getTextPost());
         holder.username.setText(post.getUsername());
         holder.atUsername.setText(post.getUserID());
-        Glide.with(context).load(postList.get(position).getImages()).into(holder.images);
+        if (postList.get(position).getImages()!=null){
+            holder.images.setVisibility(View.VISIBLE);
+            Glide.with(context).load(postList.get(position).getImages()).into(holder.images);
+        }else holder.images.setVisibility(View.GONE);
+
     }
 
     @Override

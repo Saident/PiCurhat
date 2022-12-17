@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="#2A2A2A"
     android:noHistory="true">
 
     <ImageView
@@ -35,7 +35,7 @@
         android:id="@+id/greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let’s explore Mind.ly stories today!"
+        android:text="Let’s explore PiCurhat stories today!"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:fontFamily="@font/poppins_medium"
